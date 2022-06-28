@@ -4,3 +4,6 @@ from django.http import HttpResponse
 
 def inicio(request):
     return HttpResponse("<h1>Bienvenidos a la librería</h1>")
+
+def nosotros(request):
+    return render(request, 'libreria/nosotros.html')
