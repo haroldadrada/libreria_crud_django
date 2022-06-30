@@ -13,3 +13,6 @@ def libros(request):
 
 def crear(request):
     return render(request, 'libreria/crear.html')
+
+def editar(request):
+    return render(request, 'libreria/editar.html')
