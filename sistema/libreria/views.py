@@ -24,6 +24,9 @@ def crear(request):
 def editar(request, id):
     libro = Libro.objects.get(id=id)
     formulario = LibroForm(request.POST or None, request.FILES or None, instance=libro)
+    if formulario.is_valid() and request.POST:
+        formulario.save()
+        return redirect('libros')
     return render(request, 'libreria/editar.html', {'formulario': formulario})
 
 def eliminar(request, id):
